@@ -11,14 +11,14 @@ import java.util.ArrayList;
 public class choferDTO {
 
     static final String BD_Conexion = "jdbc:mysql://localhost:3306/";
-    static final String Usuario_BD = "root1";
-    static final String Contrasena_BD = "root1";
+    static final String Usuario_BD = "root";
+    static final String Contrasena_BD = "root";
 
-        public void saveChofer(String nombre, String apellido,long dni, int antigüedad, long sueldoBase){
+        public void saveChofer(String nombre, String apellido,int dni, int antiguedad, int sueldoBase){
 
             try(Connection con = DriverManager.getConnection(BD_Conexion, Usuario_BD, Contrasena_BD);
                 Statement stmt = con.createStatement()){
-                String query = " INSERT INTO proyectofinal_cfp18.chofer(nombre, apellido, dni, antigüedad, sueldoBase) VALUES ('" + nombre + "','" + apellido + "','" + dni + "','" + antigüedad + "','" + sueldoBase + "');";
+                String query = " INSERT INTO proyectofinal_cfp18.chofer(nombre, apellido, dni, antiguedad, sueldoBase) VALUES ('" + nombre + "','" + apellido + "','" + dni + "','" + antiguedad + "','" + sueldoBase + "');";
                 stmt.executeUpdate(query); //crear base de Datos
                 System.out.println("Persistio en base de datos.");
             } catch (SQLException e) {

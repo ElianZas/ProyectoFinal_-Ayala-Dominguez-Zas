@@ -5,35 +5,35 @@ public class chofer {
     private String nombre;
     private String apellido;
     private int dni;
-    private int antigüedad;
+    private int antiguedad;
     private int sueldoBase;
 
     public chofer(String newNombre, String newApellido, int newDni, int newAntiguedad, int newSueldoBase){
         this.nombre = newNombre;
         this.apellido = newApellido;
         this.dni = newDni;
-        this.antigüedad = newAntiguedad;
+        this.antiguedad = newAntiguedad;
         this.sueldoBase = newSueldoBase;
         }
     
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
 
     public String getApellido() {
-        return apellido;
+        return this.apellido;
     }
 
     public int getDni() {
-        return dni;
+        return this.dni;
     }
 
-    public int getAntigüedad() {
-        return antigüedad;
+    public int getantiguedad() {
+        return this.antiguedad;
     }
 
     public int getSueldoBase() {
-        return sueldoBase;
+        return this.sueldoBase;
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -44,15 +44,15 @@ public class chofer {
     public void setDni(int dni) {
         this.dni = dni;
     }
-    public void setAntigüedad(int antigüedad) {
-        this.antigüedad = antigüedad;
+    public void setantiguedad(int antiguedad) {
+        this.antiguedad = antiguedad;
     }
     public void setSueldoBase(int sueldoBase) {
         this.sueldoBase = sueldoBase;
     }
 
     public String toString(){
-        return this.nombre + " " + this.apellido +" " +this.dni+" "+this.antigüedad+" "+this.sueldoBase+" ";
+        return this.nombre + " " + this.apellido +" " +this.dni+" "+this.antiguedad+" "+this.sueldoBase+" ";
     }
     
 }
