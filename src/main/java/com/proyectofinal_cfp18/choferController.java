@@ -57,7 +57,7 @@ public class choferController {
         }
     } 
 
-    public void getSueldosChoferes(){ 
+    public void getSueldos(){ 
         ArrayList<sueldochofer> sueldoBase = choferService.getchofer();
         JSONObject sueldoss = new JSONObject();
         int x = 0;
@@ -65,7 +65,6 @@ public class choferController {
             JSONObject sueldo = new JSONObject();         
             sueldo.put("SueldoBruto", sueldoBase.get(x).getsueldoBruto());
             sueldo.put("SueldoNeto", sueldoBase.get(x).getsueldoNeto());
-            sueldo.put("dni", sueldoBase.get(x).getDni());
             sueldo.put("nombre",sueldoBase.get(x).getnombre());
             sueldo.put("apellido",sueldoBase.get(x).getapellido());
             
@@ -74,41 +73,12 @@ public class choferController {
             x++;
         }
 
-        JSONArray choferesList = new JSONArray();
+        JSONArray EmpleadosList = new JSONArray();
 
-        choferesList.add(sueldoss);
+        EmpleadosList.add(sueldoss);
 
-        try(FileWriter file = new FileWriter("sueldosChoferes.json")){
-            file.write(choferesList.toJSONString());
-            file.flush();
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-    }
-
-    public void getSueldos(){ 
-        ArrayList<sueldochofer> sueldoBase = choferService.getchofer();
-        JSONObject sueldoss = new JSONObject();
-        int x = 0;
-        while(x < sueldoBase.size()){ 
-            JSONObject sueldo = new JSONObject();         
-            sueldo.put("SueldoBruto", sueldoBase.get(x).getsueldoBruto());
-            sueldo.put("SueldoNeto", sueldoBase.get(x).getsueldoNeto());
-            sueldo.put("dni", sueldoBase.get(x).getDni());
-            sueldo.put("nombre",sueldoBase.get(x).getnombre());
-            sueldo.put("apellido",sueldoBase.get(x).getapellido());
-            
-            sueldoss.put(x,sueldo);
-            System.out.println();
-            x++;
-        }
-
-        JSONArray choferesList = new JSONArray();
-
-        choferesList.add(sueldoss);
-
-        try(FileWriter file = new FileWriter("sueldosChoferes.json")){
-            file.write(choferesList.toJSONString());
+        try(FileWriter file = new FileWriter("SueldosChofer.json")){
+            file.write(EmpleadosList.toJSONString());
             file.flush();
         } catch (IOException e){
             e.printStackTrace();
