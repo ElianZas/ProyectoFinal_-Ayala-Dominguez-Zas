@@ -19,7 +19,11 @@
   </properties>
 
   <dependencies>
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 90bc2101ecdb5712a524d4d4ec7b38d1da064ed6
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
@@ -32,7 +36,10 @@
       <version>1.1.1</version>
     </dependency>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 90bc2101ecdb5712a524d4d4ec7b38d1da064ed6
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
