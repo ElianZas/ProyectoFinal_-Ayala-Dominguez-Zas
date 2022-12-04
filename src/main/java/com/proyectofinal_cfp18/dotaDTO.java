@@ -6,8 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+
 
 public class dotaDTO {
 
@@ -15,7 +14,7 @@ public class dotaDTO {
     static final String Usuario_BD = "root";
     static final String Contrasena_BD = "root";
 
-        public void saveDota(int linea, int cantidad_unidades, long mantenimiento, long ganancias){
+        public void saveDota(int linea, int cantidad_unidades, int mantenimiento, int ganancias){
 
             try(Connection con = DriverManager.getConnection(BD_Conexion, Usuario_BD, Contrasena_BD);
                 Statement stmt = con.createStatement()){
@@ -31,7 +30,6 @@ public class dotaDTO {
         public ArrayList<dota> getDotas(){
         dotaMapping dotaMapping = new dotaMapping();
         ArrayList<dota> dotas= new ArrayList<dota>();
-        Map<Integer,dota> dotaMap = new HashMap<Integer,dota>();
         
             try(Connection con = DriverManager.getConnection(BD_Conexion, Usuario_BD, Contrasena_BD);
             Statement stmt = con.createStatement()){
@@ -42,10 +40,9 @@ public class dotaDTO {
                     Integer cantidad_unidadesDB = result.getInt("cantidad_unidades");
                     Integer mantenimientoDB = result.getInt("mantenimiento");
                     Integer gananciasDB = result.getInt("ganancias");
-                    dota.add(dotaMapping.mapDota(lineaDB,cantidad_unidadesDB,mantenimientoDB,gananciasDB));
-                                        //choferMap.put(id_chofer, choferMapping.mapChofer(nombreBD, apellidoBD, dniDB, antiguedadDB,sueldoBaseDB));    
+                    dotas.add(dotaMapping.mapDota(lineaDB,cantidad_unidadesDB,mantenimientoDB,gananciasDB));    
                 }
-                System.out.println(dotaMap.get(0) );
+                
             } catch (SQLException e) {
                 e.printStackTrace();
             }

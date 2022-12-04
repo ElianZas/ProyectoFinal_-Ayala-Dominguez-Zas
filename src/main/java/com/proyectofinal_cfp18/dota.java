@@ -1,13 +1,13 @@
 package com.proyectofinal_cfp18;
 
 public class dota {
-    
+
     private int linea; // linea N°: 79
     private int cantidad_unidades; //total de unidades: 12
-    private long Mantenimiento;
-    private long ganancias; // ganancias totales: 7000000
+    private int Mantenimiento;
+    private int ganancias; // ganancias totales: 7000000
 
-    public dota (int newLinea, int newCantidad_unidades,long newMantenimiento, long newGanancias){
+    public dota (int newLinea, int newCantidad_unidades,int newMantenimiento, int newGanancias){
         this.linea = newLinea;
         this.Mantenimiento = newMantenimiento;
         this.cantidad_unidades = newCantidad_unidades;
@@ -20,10 +20,10 @@ public class dota {
     public int getCantidad_unidades() {
         return cantidad_unidades;
     }
-    public long getMantenimiento() {
+    public int getMantenimiento() {
         return Mantenimiento;
     }
-    public long getGanancias() {
+    public int getGanancias() {
         return ganancias;
     }
     public void setLinea(int linea) {
@@ -32,13 +32,13 @@ public class dota {
     public void setCantidad_unidades(int cantidad_unidades) {
         this.cantidad_unidades = cantidad_unidades;
     }
-    public void setMantenimiento(long mantenimiento) {
+    public void setMantenimiento(int mantenimiento) {
         Mantenimiento = mantenimiento;
     }
-    public void setGanancias(long ganancias) {
+    public void setGanancias(int ganancias) {
         this.ganancias = ganancias;
-    }
-
-    public static void add(dota mapDota) {
+    }   
+    public String toString(){
+        return this.linea + " " + this.cantidad_unidades +" " +this.Mantenimiento+" "+this.ganancias+" ";
     }  
 }
