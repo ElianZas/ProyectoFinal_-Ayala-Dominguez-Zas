@@ -37,7 +37,7 @@ public class choferService {
                 sueldoBruto =  chofer.get(x).getSueldoBase() + (chofer.get(x).getantiguedad() * 5000);
                 sueldoNeto = sueldoBruto*0.8f;
                 if (sueldoBruto>150000){
-                    sueldoBruto=sueldoBruto-4000;
+                    sueldoBruto=sueldoBruto-4500;
                     sueldoNeto = sueldoBruto*0.8f;
                 }
             }else if (chofer.get(x).getSueldoBase()==70000){
