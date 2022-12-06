@@ -7,7 +7,7 @@ public class sueldochofer {
     private String nombre;
     private String apellido;
 
-    public sueldochofer(float newsueldoBruto, float newsueldoNeto, int newdni, String newnombre, String newapellido){
+    public sueldochofer(int newsueldoBruto, float newsueldoNeto, int newdni, String newnombre, String newapellido){
         this.sueldoBruto = newsueldoBruto;
         this.sueldoNeto = newsueldoNeto;
         this.dni = newdni;
