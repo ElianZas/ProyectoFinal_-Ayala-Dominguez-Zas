@@ -2,12 +2,12 @@ package com.proyectofinal_cfp18;
 // para el formato del JSON
 public class sueldochofer {
     private int sueldoBruto;
-    private int sueldoNeto;
+    private float sueldoNeto;
     private int dni;
     private String nombre;
     private String apellido;
 
-    public sueldochofer(int newsueldoBruto, int newsueldoNeto, int newdni, String newnombre, String newapellido){
+    public sueldochofer(int newsueldoBruto, float newsueldoNeto, int newdni, String newnombre, String newapellido){
         this.sueldoBruto = newsueldoBruto;
         this.sueldoNeto = newsueldoNeto;
         this.dni = newdni;
@@ -19,7 +19,7 @@ public class sueldochofer {
         return this.sueldoBruto;
     }
 
-    public int getsueldoNeto(){
+    public float getsueldoNeto(){
         return this.sueldoNeto;
     }
     public int getDni() {
@@ -35,7 +35,7 @@ public class sueldochofer {
     public void setSueldoBruto(int sueldoBruto) {
         this.sueldoBruto = sueldoBruto;
     }
-    public void setSueldoNeto(int sueldoNeto) {
+    public void setSueldoNeto(Float sueldoNeto) {
         this.sueldoNeto = sueldoNeto;
     }
     public void setNombre(String nombre) {
