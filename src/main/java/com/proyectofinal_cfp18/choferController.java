@@ -13,7 +13,7 @@ public class choferController {
     
     choferService choferService = new choferService();
 
-    public void getChofer(){ 
+    public void getpostChofer(){ 
         JSONObject choferobj = new JSONObject();
         ArrayList<chofer> choferes = new ArrayList<chofer>();
 
