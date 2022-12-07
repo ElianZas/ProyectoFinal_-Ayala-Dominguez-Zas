@@ -2,13 +2,13 @@ package com.proyectofinal_cfp18;
 
 public class ganancias {
     private int mantenimientosLinea;
-    private int gananciasLinea;
+    private int gananciaBruta;
     private int ganaciaNeta;
     private int totalSueldoChofer;
 
-    public ganancias(int newmantenimientoLinea, int newgananciasLinea, int newganaciaNeta , int newtotalSueldoChofer){
+    public ganancias(int newmantenimientoLinea, int newgananciaBruta, int newganaciaNeta , int newtotalSueldoChofer){
         this.mantenimientosLinea = newmantenimientoLinea;
-        this.gananciasLinea = newgananciasLinea;
+        this.gananciaBruta = newgananciaBruta;
         this.ganaciaNeta = newganaciaNeta;
         this.totalSueldoChofer = newtotalSueldoChofer;
     }
@@ -17,8 +17,8 @@ public class ganancias {
         return mantenimientosLinea;
     }
 
-    public int getgananciasLinea(){
-        return gananciasLinea;
+    public int getGananciaBruta() {
+        return gananciaBruta;
     }
 
     public int getganaciaNeta(){
@@ -30,6 +30,6 @@ public class ganancias {
     }
 
     public String toString(){
-        return this.mantenimientosLinea + " " + this.gananciasLinea +" " +this.ganaciaNeta+" "+this.totalSueldoChofer+" ";
+        return this.mantenimientosLinea + " " + this.gananciaBruta +" " +this.ganaciaNeta+" "+this.totalSueldoChofer+" ";
     }
 }

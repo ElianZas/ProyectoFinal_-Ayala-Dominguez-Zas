@@ -12,20 +12,20 @@ public class dotaService {
         ArrayList<dota> dota = dotaDTO.getDotas();
         ArrayList<sueldochofer> sueldochofer= choferService.getchofer();
         ArrayList<ganancias> ganancias= new ArrayList<ganancias>();
-        int sumaganancia = 0;
-        int sumamantenimiento = 0;
+        int gananciaBruta = 0;
+        int gastosMantenimiento = 0;
         int gananciaNeta = 0;
-        int sumasueldochofer = 0;
+        int totalSueldosChofer = 0;
         for(int x = 0; x < dota.size() ;x++){
-            sumaganancia = sumaganancia + dota.get(x).getGanancias();//suma ganancias
-            gananciaNeta = (sumaganancia/100*80);//ganancia Neta
-            sumamantenimiento = sumamantenimiento + (dota.get(x).getCantidad_unidades() *  dota.get(x).getMantenimiento());//suma gasto de mantenimiento              
+            gananciaBruta = gananciaBruta + dota.get(x).getGanancias();//suma ganancias
+            gananciaNeta = (gananciaBruta/100*70);//ganancia Neta
+            gastosMantenimiento = gastosMantenimiento + (dota.get(x).getCantidad_unidades() *  dota.get(x).getMantenimiento());//suma gasto de mantenimiento              
         }
         for(int x = 0; x < sueldochofer.size() ;x++){
-            sumasueldochofer = sumasueldochofer + (sueldochofer.get(x).getsueldoBruto());
+            totalSueldosChofer = totalSueldosChofer + (sueldochofer.get(x).getsueldoBruto());
         }
-        ganancias.add(new ganancias(sumaganancia, sumamantenimiento, gananciaNeta,sumasueldochofer));
-        System.out.println(ganancias);
+        ganancias.add(new ganancias(gastosMantenimiento, gananciaBruta, gananciaNeta,totalSueldosChofer));
+        System.out.println();
         return ganancias;
     }
 }
