@@ -6,10 +6,17 @@ package com.proyectofinal_cfp18;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ){
+
+        dotaController dotaController = new dotaController();
         choferController choferController = new choferController();
-        choferController.getpostChofer();
-        choferController.getSueldos();
+        //choferController.getpostChofer();
+        //choferController.getSueldos();
+        dotaController.getGananciasDota();
+
+
+        //para prueba
+        //dotaService dotaService = new dotaService();
+        //dotaService.getDotas();
     }
 }
