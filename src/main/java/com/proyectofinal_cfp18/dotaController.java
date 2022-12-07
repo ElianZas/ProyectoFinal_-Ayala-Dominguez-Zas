@@ -16,9 +16,9 @@ public class dotaController {
         int x = 0;
         while(x < gananciaBase.size() ){ 
             JSONObject ganancia = new JSONObject();         
-            ganancia.put("gananciaBruto", gananciaBase.get(x).getgananciasLinea());
-            ganancia.put("GastoMatenimiento", gananciaBase.get(x).getmantenimientoLinea());
-            ganancia.put("GananciaNeta",gananciaBase.get(x).getganaciaNeta());
+            ganancia.put("gastosMantenimiento", gananciaBase.get(x).getmantenimientoLinea());
+            ganancia.put("gananciaBruta", gananciaBase.get(x).getGananciaBruta());
+            ganancia.put("gananciaNeta",gananciaBase.get(x).getganaciaNeta());
             ganancia.put("totalSueldosChofer",gananciaBase.get(x).gettotalSueldoChofer());
             
             
