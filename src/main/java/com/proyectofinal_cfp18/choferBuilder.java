@@ -3,15 +3,12 @@ import org.json.simple.JSONObject;
 
 public class choferBuilder {
 
-    public sueldochofer builderSueldosChofer(JSONObject object){
-        JSONObject sueldosObject = (JSONObject) object.get("0");
-        Long sueldoBruto = (Long) sueldosObject.get("sueldoBruto");
-        Long sueldoNeto=(Long) sueldosObject.get("sueldoNeto");
-        Long dni=(Long) sueldosObject.get("dni");
-        String nombre = (String) sueldosObject.get("nombre");
-        String apellido = (String) sueldosObject.get("apellido");
-        sueldochofer resultChofer = new sueldochofer(sueldoBruto.intValue(), sueldoNeto.intValue(), dni.intValue(), nombre, apellido);
-        return resultChofer;   
+    public sueldochofer builderSueldosChofer(JSONObject object2, Object x){
+        JSONObject choferObject = (JSONObject) object2.get(x);
+        Long sueldoBruto = (Long) choferObject.get("sueldoBruto");
+        Long sueldoNeto=(Long) choferObject.get("sueldoNeto");
+        sueldochofer resultSueldo = new sueldochofer(sueldoBruto.intValue(),sueldoNeto.intValue());
+        return resultSueldo;   
     }        
     
     public static chofer builderChofer(JSONObject object){

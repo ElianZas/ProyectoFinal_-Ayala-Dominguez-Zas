@@ -19,6 +19,13 @@ CREATE TABLE proyectofinal_cfp18.chofer (
 	CONSTRAINT choferes_PK PRIMARY KEY (id_chofer)
 );
 
+CREATE TABLE proyectofinal_cfp18.sueldos (
+	id_chofer INT auto_increment NOT NULL,
+	sueldoNeto INT NULL,
+	sueldoBruto INT null,
+	CONSTRAINT choferes_PK PRIMARY KEY (id_sueldo)
+);
+
 #inserta datos de Dota
 INSERT INTO proyectofinal_cfp18.dota (linea,total_unidades,mantenimiento,total_ganancias)
 	VALUES (79,12,50000,7000000);
