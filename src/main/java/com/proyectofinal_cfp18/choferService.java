@@ -47,7 +47,7 @@ public class choferService {
             //System.out.println(sueldo1);
             sueldochofer.add(new sueldochofer(sueldoBruto, sueldoNeto, chofer.get(x).getDni(), chofer.get(x).getNombre() , chofer.get(x).getApellido()));
         }
-        System.out.println("Se creó JSON con los sueldos de los choferes\n"+sueldochofer);
+        //System.out.println("Se creó JSON con los sueldos de los choferes\n"+sueldochofer);
         return sueldochofer;
     }
 }

@@ -11,8 +11,8 @@ import java.util.ArrayList;
 public class dotaDTO {
 
     static final String BD_Conexion = "jdbc:mysql://localhost:3306/";
-    static final String Usuario_BD = "root";
-    static final String Contrasena_BD = "root";
+    static final String Usuario_BD = "root1";
+    static final String Contrasena_BD = "root1";
 
         public void saveDota(int linea, int cantidad_unidades, int mantenimiento, int ganancias){
 
