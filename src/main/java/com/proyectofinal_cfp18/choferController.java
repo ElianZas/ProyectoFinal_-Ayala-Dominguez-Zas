@@ -57,16 +57,15 @@ public class choferController {
         }
     } 
 
+
     public void getSueldos(){ 
         ArrayList<sueldochofer> sueldoBase = choferService.getchofer();
         JSONObject sueldoss = new JSONObject();
         int x = 0;
         while(x < sueldoBase.size() - 1){ 
-            JSONObject sueldo = new JSONObject();         
-            sueldo.put("SueldoBruto", sueldoBase.get(x).getsueldoBruto());
-            sueldo.put("SueldoNeto", sueldoBase.get(x).getsueldoNeto());
-            sueldo.put("nombre",sueldoBase.get(x).getnombre());
-            sueldo.put("apellido",sueldoBase.get(x).getapellido());
+            JSONObject sueldo = new JSONObject();        
+            sueldo.put("sueldoNeto", sueldoBase.get(x).getsueldoNeto()); 
+            sueldo.put("sueldoBruto", sueldoBase.get(x).getsueldoBruto());
             
             sueldoss.put(x,sueldo);
             System.out.println();
@@ -81,6 +80,22 @@ public class choferController {
             file.write(EmpleadosList.toJSONString());
             file.flush();
         } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+    public void postSueldos(Object x){ 
+        JSONObject choferobj = new JSONObject();
+        ArrayList<chofer> choferes = new ArrayList<chofer>();
+        JSONParser jsonParserA = new JSONParser();
+        choferBuilder builderSueldos = new choferBuilder();
+        try(FileReader reader = new FileReader("SueldosChofer.json")){
+            Object objs = jsonParserA.parse(reader);
+            JSONArray jsonSueldos = (JSONArray) objs;
+            sueldochofer sueldochofer = builderSueldos.builderSueldosChofer((JSONObject)jsonSueldos.get(0),x);
+            System.out.println("OK");
+            System.out.println(sueldochofer);
+            choferService.validateAndSaveSueldos(sueldochofer);
+        } catch (Exception e){
             e.printStackTrace();
         }
     }

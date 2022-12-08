@@ -11,8 +11,8 @@ import java.util.ArrayList;
 public class choferDTO {
 
     static final String BD_Conexion = "jdbc:mysql://localhost:3306/";
-    static final String Usuario_BD = "root1";
-    static final String Contrasena_BD = "root1";
+    static final String Usuario_BD = "root";
+    static final String Contrasena_BD = "root";
 
         public void saveChofer(String nombre, String apellido,int dni, int antiguedad, int sueldoBase){
 
@@ -22,6 +22,18 @@ public class choferDTO {
                 stmt.executeUpdate(query); //crear base de Datos
                 System.out.println("Persistio en base de datos.");
             } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        public void saveSueldosChofer(int sueldoBruto, int sueldoNeto){
+
+            try(Connection con = DriverManager.getConnection(BD_Conexion, Usuario_BD, Contrasena_BD);
+                Statement stmt = con.createStatement()){
+                String query7 = " INSERT INTO proyectofinal_cfp18.sueldos(sueldoBruto, sueldoNeto) VALUES ('" + sueldoBruto + "','" + sueldoNeto + "');";
+                stmt.executeUpdate(query7); //crear base de Datos
+                System.out.println("Persistio en base de datos.");
+            } catch (SQLException e) {
+                System.out.println("ERROR");
                 e.printStackTrace();
             }
         }

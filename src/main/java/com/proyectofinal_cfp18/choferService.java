@@ -26,28 +26,34 @@ public class choferService {
         }
     }
 
+    public void validateAndSaveSueldos(sueldochofer sueldochofer){
+        choferDTO choferDTO = new choferDTO();
+        choferDTO.saveSueldosChofer(sueldochofer.getsueldoNeto(), sueldochofer.getsueldoBruto());
+        }
+
+
     public ArrayList<sueldochofer> getchofer(){
         ArrayList<chofer> chofer = choferDTO.getchofer ();
         ArrayList<sueldochofer> sueldochofer= new ArrayList<sueldochofer>();
         
         for(int x = 0 ; x < chofer.size();x++){
             int sueldoBruto = 0;
-            float sueldoNeto=0;
+            int sueldoNeto=0;
             if(chofer.get(x).getantiguedad() > 0 ){
                 sueldoBruto =  chofer.get(x).getSueldoBase() + (chofer.get(x).getantiguedad() * 5000);
-                sueldoNeto = sueldoBruto*0.8f;
+                sueldoNeto = (sueldoBruto/100*80);
                 if (sueldoBruto>150000){
                     sueldoBruto=sueldoBruto-4500;
-                    sueldoNeto = sueldoBruto*0.8f;
+                    sueldoNeto = (sueldoBruto/100*80);
                 }
             }else if (chofer.get(x).getSueldoBase()==70000){
                 sueldoBruto =   chofer.get(x).getSueldoBase();
-                sueldoNeto = sueldoBruto*0.8f;
+                sueldoNeto = (sueldoBruto/100*80);
             }
             //System.out.println(sueldo1);
-            sueldochofer.add(new sueldochofer(sueldoBruto, sueldoNeto, chofer.get(x).getDni(), chofer.get(x).getNombre() , chofer.get(x).getApellido()));
+            sueldochofer.add(new sueldochofer(sueldoBruto, sueldoNeto));
         }
-        //System.out.println("Se creó JSON con los sueldos de los choferes\n"+sueldochofer);
+        System.out.println("Se creó JSON con los sueldos de los choferes\n"+sueldochofer);
         return sueldochofer;
     }
 }
