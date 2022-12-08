@@ -5,12 +5,14 @@ public class ganancias {
     private int gananciaBruta;
     private int ganaciaNeta;
     private int totalSueldoChofer;
+    private int ganaciaFinalEmpresa;
 
-    public ganancias(int newmantenimientoLinea, int newgananciaBruta, int newganaciaNeta , int newtotalSueldoChofer){
+    public ganancias(int newmantenimientoLinea, int newgananciaBruta, int newganaciaNeta , int newtotalSueldoChofer, int newganaciaFinalEmpresa){
         this.mantenimientosLinea = newmantenimientoLinea;
         this.gananciaBruta = newgananciaBruta;
         this.ganaciaNeta = newganaciaNeta;
         this.totalSueldoChofer = newtotalSueldoChofer;
+        this.ganaciaFinalEmpresa = newganaciaFinalEmpresa;
     }
 
     public int getmantenimientoLinea(){
@@ -27,6 +29,10 @@ public class ganancias {
 
     public int gettotalSueldoChofer(){
         return totalSueldoChofer;
+    }
+
+    public int getganaciaFinalEmpresa(){
+        return ganaciaFinalEmpresa;
     }
 
     public String toString(){
