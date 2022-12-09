@@ -19,12 +19,7 @@ CREATE TABLE proyectofinal_cfp18.chofer (
 	CONSTRAINT choferes_PK PRIMARY KEY (id_chofer)
 );
 
-CREATE TABLE proyectofinal_cfp18.sueldos (
-	id_chofer INT auto_increment NOT NULL,
-	sueldoNeto INT NULL,
-	sueldoBruto INT null,
-	CONSTRAINT choferes_PK PRIMARY KEY (id_sueldo)
-);
+
 
 #inserta datos de Dota
 INSERT INTO proyectofinal_cfp18.dota (linea,total_unidades,mantenimiento,total_ganancias)
@@ -169,8 +164,7 @@ INSERT INTO proyectofinal_cfp18.chofer (nombre,apellido,dni,antiguedad,sueldoBas
 	VALUES ('ALIGUÉ RIVERA','MARIONA',37790238,10,70000);
 INSERT INTO proyectofinal_cfp18.chofer (nombre,apellido,dni,antiguedad,sueldoBase)
 	VALUES ('BARRIGA RIU','MARC',29343879,0,70000);
-INSERT INTO proyectofinal_cfp18.chofer (nombre,apellido,dni,antiguedad,sueldoBase)
-	VALUES ('PORTELLA GISPETS','GEMMA',27116347,10,70000);
+
 
 #IMPORTANTE DE DBEAVER 
 #HACER 2 CLIC SOBRE Databases

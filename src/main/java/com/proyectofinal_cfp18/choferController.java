@@ -17,7 +17,7 @@ public class choferController {
         JSONObject choferobj = new JSONObject();
         ArrayList<chofer> choferes = new ArrayList<chofer>();
 
-        choferes.add(new chofer("Roberto", "Dominguez", 31465872, 20, 70000));
+        choferes.add(new chofer("Roberto", "Dominguez", 31465872, 10, 70000));
         int x = 0;
         for(x=0;x<= choferes.size()-1;x++){ 
                  JSONObject chofer = new JSONObject();
@@ -49,7 +49,7 @@ public class choferController {
         try(FileReader reader = new FileReader("chofer.json")){
             Object obj = jsonParser.parse(reader);
             JSONArray jsonChofer = (JSONArray) obj;
-            chofer chofer = choferBuilder.builderChofer((JSONObject)jsonChofer.get(0));
+            chofer chofer = builderChofer.builderChofer((JSONObject)jsonChofer.get(0));
             System.out.println(chofer);
             choferService.validateAndSaveChofer(chofer);
         } catch (Exception e){
@@ -65,6 +65,8 @@ public class choferController {
             JSONObject sueldo = new JSONObject();        
             sueldo.put("sueldoNeto", sueldoBase.get(x).getsueldoNeto()); 
             sueldo.put("sueldoBruto", sueldoBase.get(x).getsueldoBruto());
+            sueldo.put("apellido", sueldoBase.get(x).getapellido());
+            sueldo.put("nombre", sueldoBase.get(x).getnombre());
             
             sueldoss.put(x,sueldo);
             System.out.println();
@@ -82,20 +84,5 @@ public class choferController {
             e.printStackTrace();
         }
     }
-    public void postSueldos(Object x){ 
-        JSONObject choferobj = new JSONObject();
-        ArrayList<chofer> choferes = new ArrayList<chofer>();
-        JSONParser jsonParserA = new JSONParser();
-        choferBuilder builderSueldos = new choferBuilder();
-        try(FileReader reader = new FileReader("SueldosChofer.json")){
-            Object objs = jsonParserA.parse(reader);
-            JSONArray jsonSueldos = (JSONArray) objs;
-            sueldochofer sueldochofer = builderSueldos.builderSueldosChofer((JSONObject)jsonSueldos.get(0),x);
-            System.out.println("OK");
-            System.out.println(sueldochofer);
-            choferService.validateAndSaveSueldos(sueldochofer);
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-    }    
+        
 }
