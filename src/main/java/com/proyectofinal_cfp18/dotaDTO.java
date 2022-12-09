@@ -14,19 +14,7 @@ public class dotaDTO {
     static final String Usuario_BD = "root";
     static final String Contrasena_BD = "root";
 
-        public void saveDota(int linea, int cantidad_unidades, int mantenimiento, int ganancias){
-
-            try(Connection con = DriverManager.getConnection(BD_Conexion, Usuario_BD, Contrasena_BD);
-                Statement stmt = con.createStatement()){
-                String query = " INSERT INTO proyectofinal_cfp18.dota(linea, cantidad_unidades, mantenimiento, ganancias) VALUES ('" + linea + "','" + cantidad_unidades + "','" + mantenimiento + "','" + ganancias + "');";
-                stmt.executeUpdate(query); //crear base de Datos
-                System.out.println("Persistio en base de datos.");
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        /**/
+        
         public ArrayList<dota> getDotas(){
         dotaMapping dotaMapping = new dotaMapping();
         ArrayList<dota> dotas= new ArrayList<dota>();
