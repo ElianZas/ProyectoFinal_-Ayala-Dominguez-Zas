@@ -16,23 +16,23 @@ public class ganancias {
     }
 
     public int getmantenimientoLinea(){
-        return mantenimientosLinea;
+        return this.mantenimientosLinea;
     }
 
     public int getGananciaBruta() {
-        return gananciaBruta;
+        return this.gananciaBruta;
     }
 
     public int getganaciaNeta(){
-        return ganaciaNeta;
+        return this.ganaciaNeta;
     }
 
     public int gettotalSueldoChofer(){
-        return totalSueldoChofer;
+        return this.totalSueldoChofer;
     }
 
     public int getganaciaFinalEmpresa(){
-        return ganaciaFinalEmpresa;
+        return this.ganaciaFinalEmpresa;
     }
 
     public String toString(){

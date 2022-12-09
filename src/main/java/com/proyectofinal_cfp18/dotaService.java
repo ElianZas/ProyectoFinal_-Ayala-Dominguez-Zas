@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class dotaService {
     static dotaDTO dotaDTO = new dotaDTO();
 
-
     public ArrayList<ganancias> getDotas(){
 
         Scanner input = new Scanner(System.in);
@@ -32,8 +31,9 @@ public class dotaService {
         }
         totalganacia = gananciaNeta - (gastosMantenimiento + totalSueldosChofer);
         System.out.println("");
-        System.out.println("GANANCIA EMPRESA DESCONTANDO IMPUESTO GANANCIA, TOTAL SUELDOS CHOFER Y MANTENIMIENTO DE COLECTIVOS = "+totalganacia);
+        System.out.println("GANANCIA EMPRESA DESCONTANDO IMPUESTO GANANCIA, TOTAL SUELDOS CHOFER Y MANTENIMIENTO DE COLECTIVOS = " + totalganacia);
         System.out.println("");
+     
         if(totalganacia > 10000000){
             System.out.println("QUIERE COMPRAR NUEVA UNIDAD VALOR $5.000.000--INGRESE 1=SI / 0=NO:");
             int comprar = input.nextInt(); 
@@ -41,13 +41,16 @@ public class dotaService {
                 gananciaFinalEmpresa = totalganacia - 5000000;
                 System.out.println("SE SUMARA 5.000.000 A LOS GASTOS");
                 System.out.println("");
-                System.out.println("TOTAL GANANCIA EMPRESA: "+ gananciaFinalEmpresa);
+                System.out.println("TOTAL GANANCIA EMPRESA: " + gananciaFinalEmpresa);
             }else {
                 gananciaFinalEmpresa = totalganacia;
                 System.out.println("OPTO NO comprar UNIDAD");
-                System.out.println("TOTAL GANANCIA EMPRESA: "+ gananciaFinalEmpresa);
-            }
-            
+                System.out.println("TOTAL GANANCIA EMPRESA: " + gananciaFinalEmpresa);
+            }    
+        }
+        else {
+            System.out.println("LAS GANANCIAS NO SUPERAN LOS $ 10.000.000. NO HAY OFERTA DE UNIDADES NUEVAS.");
+            gananciaFinalEmpresa = totalganacia;
         }
         ganancias.add(new ganancias(gastosMantenimiento, gananciaBruta, gananciaNeta,totalSueldosChofer,gananciaFinalEmpresa));
         System.out.println();

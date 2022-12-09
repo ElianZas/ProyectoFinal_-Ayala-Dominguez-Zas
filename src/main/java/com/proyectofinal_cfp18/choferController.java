@@ -56,13 +56,12 @@ public class choferController {
             e.printStackTrace();
         }
     } 
-
-
+    
     public void getSueldos(){ 
         ArrayList<sueldochofer> sueldoBase = choferService.getchofer();
         JSONObject sueldoss = new JSONObject();
         int x = 0;
-        while(x < sueldoBase.size() - 1){ 
+        while(x < sueldoBase.size()){ 
             JSONObject sueldo = new JSONObject();        
             sueldo.put("sueldoNeto", sueldoBase.get(x).getsueldoNeto()); 
             sueldo.put("sueldoBruto", sueldoBase.get(x).getsueldoBruto());
@@ -98,7 +97,5 @@ public class choferController {
         } catch (Exception e){
             e.printStackTrace();
         }
-    }
-
-    
+    }    
 }
