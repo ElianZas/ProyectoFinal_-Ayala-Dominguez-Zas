@@ -36,6 +36,6 @@ public class ganancias {
     }
 
     public String toString(){
-        return this.mantenimientosLinea + " " + this.gananciaBruta +" " +this.ganaciaNeta+" "+this.totalSueldoChofer+" ";
+        return this.mantenimientosLinea + " " + this.gananciaBruta + " " + this.ganaciaNeta + " " + this.totalSueldoChofer + " ";
     }
 }

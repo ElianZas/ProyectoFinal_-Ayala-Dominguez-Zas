@@ -45,7 +45,7 @@ public class sueldochofer {
     }
 
     public String toString(){
-        return this.sueldoBruto + " " + this.sueldoNeto +" "+ this.apellido +" "+ this.nombre +" ";
+        return this.sueldoBruto + " " + this.sueldoNeto + " " + this.apellido + " " + this.nombre + " ";
 
     }
 }
