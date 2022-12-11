@@ -10,11 +10,9 @@ public class App
 
         dotaController dotaController = new dotaController();
         choferController choferController = new choferController();
-        //choferController.getpostChofer();
-        //choferController.getSueldos();
+        choferController.getChofer();
+        choferController.postChofer();
+        choferController.getSueldos();
         dotaController.getGananciasDota();
-
-
-        
     }
 }

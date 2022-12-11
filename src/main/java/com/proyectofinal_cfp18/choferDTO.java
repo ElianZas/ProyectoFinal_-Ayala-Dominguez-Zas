@@ -11,15 +11,15 @@ import java.util.ArrayList;
 public class choferDTO {
 
     static final String BD_Conexion = "jdbc:mysql://localhost:3306/";
-    static final String Usuario_BD = "root1";
-    static final String Contrasena_BD = "root1";
+    static final String Usuario_BD = "root";
+    static final String Contrasena_BD = "root";
 
         public void saveChofer(String nombre, String apellido,int dni, int antiguedad, int sueldoBase){
 
             try(Connection con = DriverManager.getConnection(BD_Conexion, Usuario_BD, Contrasena_BD);
                 Statement stmt = con.createStatement()){
                 String query = " INSERT INTO proyectofinal_cfp18.chofer(nombre, apellido, dni, antiguedad, sueldoBase) VALUES ('" + nombre + "','" + apellido + "','" + dni + "','" + antiguedad + "','" + sueldoBase + "');";
-                stmt.executeUpdate(query); //crear base de Datos
+                stmt.executeUpdate(query); 
                 System.out.println("Persistio en base de datos.");
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -35,8 +35,8 @@ public class choferDTO {
                 String query = "select * from proyectofinal_cfp18.chofer c;";
                 ResultSet result = stmt.executeQuery(query);
                 while(result.next()){ 
-                    String nombreBD = result.getString("nombre"); //formato nombre
-                    String apellidoBD = result.getString("apellido"); //formato apellido
+                    String nombreBD = result.getString("nombre");
+                    String apellidoBD = result.getString("apellido"); 
                     Integer dniDB = result.getInt("dni");
                     Integer antiguedadDB = result.getInt("antiguedad");
                     Integer sueldoBaseDB = result.getInt ("sueldoBase");
@@ -46,7 +46,6 @@ public class choferDTO {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            //System.out.println(chofer);
             return chofer;
         }
 

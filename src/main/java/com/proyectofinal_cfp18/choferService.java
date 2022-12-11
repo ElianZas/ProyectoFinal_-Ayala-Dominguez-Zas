@@ -47,7 +47,6 @@ public class choferService {
                 sueldoBruto =   chofer.get(x).getSueldoBase();
                 sueldoNeto = (sueldoBruto/100*80);
             }
-            //System.out.println(sueldo1);
             sueldochofer.add(new sueldochofer(sueldoBruto, sueldoNeto,chofer.get(x).getApellido(),chofer.get(x).getNombre()));
         }
         System.out.println("Se creó JSON con los sueldos de los choferes\n"+sueldochofer);

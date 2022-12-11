@@ -13,11 +13,11 @@ public class choferController {
     
     choferService choferService = new choferService();
 
-    public void getpostChofer(){ 
+    public void getChofer(){ 
         JSONObject choferobj = new JSONObject();
         ArrayList<chofer> choferes = new ArrayList<chofer>();
 
-        choferes.add(new chofer("Roberto", "Dominguez", 31465872, 10, 70000));
+        choferes.add(new chofer("ROBERTO", "DOMINGUEZ", 31465872, 10, 70000));
         int x = 0;
         for(x=0;x<= choferes.size()-1;x++){ 
                  JSONObject chofer = new JSONObject();
@@ -42,7 +42,8 @@ public class choferController {
         } catch (IOException e){
             e.printStackTrace();
         }
-
+    }
+        public void postChofer(){ 
         JSONParser jsonParser = new JSONParser();
         choferBuilder builderChofer = new choferBuilder();
 

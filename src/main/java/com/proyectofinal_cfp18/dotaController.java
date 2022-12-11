@@ -28,12 +28,12 @@ public class dotaController {
             x++;
         }
 
-        JSONArray GananciaList = new JSONArray();
+        JSONArray gananciaList = new JSONArray();
 
-        GananciaList.add(gananciass);
+        gananciaList.add(gananciass);
 
         try(FileWriter file = new FileWriter("GananciasYGastos.json")){
-            file.write(GananciaList.toJSONString());
+            file.write(gananciaList.toJSONString());
             file.flush();
         } catch (IOException e){
             e.printStackTrace();

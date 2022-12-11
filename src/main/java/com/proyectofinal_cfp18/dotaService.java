@@ -22,8 +22,8 @@ public class dotaService {
         int totalganacia = 0;
         int gananciaFinalEmpresa = 0;
         for(int x = 0; x < dota.size() ;x++){
-            gananciaBruta = gananciaBruta + dota.get(x).getGanancias();//suma ganancias
-            gananciaNeta = (gananciaBruta/100*70);//ganancia Neta
+            gananciaBruta = gananciaBruta + dota.get(x).getGanancias();
+            gananciaNeta = (gananciaBruta/100*70);
             gastosMantenimiento = gastosMantenimiento + (dota.get(x).getCantidad_unidades() *  dota.get(x).getMantenimiento());//suma gasto de mantenimiento              
         }
         for(int x = 0; x < sueldochofer.size() ;x++){
