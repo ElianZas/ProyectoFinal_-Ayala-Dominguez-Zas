@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-
 public class choferDTO {
 
     static final String BD_Conexion = "jdbc:mysql://localhost:3306/";

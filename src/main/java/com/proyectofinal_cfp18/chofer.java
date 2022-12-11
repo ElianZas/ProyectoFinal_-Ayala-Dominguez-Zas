@@ -35,24 +35,29 @@ public class chofer {
     public int getSueldoBase() {
         return this.sueldoBase;
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+
     public void setDni(int dni) {
         this.dni = dni;
     }
+
     public void setantiguedad(int antiguedad) {
         this.antiguedad = antiguedad;
     }
+    
     public void setSueldoBase(int sueldoBase) {
         this.sueldoBase = sueldoBase;
     }
 
     public String toString(){
-        return this.nombre + " " + this.apellido +" " +this.dni+" "+this.antiguedad+" "+this.sueldoBase+" ";
+        return this.nombre + " " + this.apellido + " " + this.dni + " " + this.antiguedad + " " + this.sueldoBase + " ";
     }
     
 }

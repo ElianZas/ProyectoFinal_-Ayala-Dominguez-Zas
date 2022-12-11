@@ -7,17 +7,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-
 public class dotaDTO {
 
     static final String BD_Conexion = "jdbc:mysql://localhost:3306/";
     static final String Usuario_BD = "root";
     static final String Contrasena_BD = "root";
 
-        
         public ArrayList<dota> getDotas(){
         dotaMapping dotaMapping = new dotaMapping();
-        ArrayList<dota> dotas= new ArrayList<dota>();
+        ArrayList<dota> dotas = new ArrayList<dota>();
         
             try(Connection con = DriverManager.getConnection(BD_Conexion, Usuario_BD, Contrasena_BD);
             Statement stmt = con.createStatement()){
@@ -35,7 +33,5 @@ public class dotaDTO {
                 e.printStackTrace();
             }
             return dotas;
-        }
-
-    
+        }    
 }
